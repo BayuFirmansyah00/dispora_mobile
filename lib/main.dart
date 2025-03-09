@@ -1,23 +1,49 @@
+// import 'package:flutter/material.dart';
+// import 'screens/dashboard.dart'; // Impor dashboard.dart
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title: 'Ekonomi Kreatif Nganjuk',
+//       theme: ThemeData(
+//         primarySwatch: Colors.deepPurple,
+//         visualDensity: VisualDensity.adaptivePlatformDensity,
+//       ),
+//       home: Dashboard(), // Menampilkan Dashboard sebagai halaman utama
+//     );
+//   }
+// }
+
 import 'package:flutter/material.dart';
-import 'screen/dashboard.dart'; // Impor dashboard.dart
+import 'screens/notifikasi_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Notification App',
       debugShowCheckedModeBanner: false,
-      title: 'Ekonomi Kreatif Nganjuk',
+      
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primarySwatch: Colors.blue,
+        fontFamily: 'Inter',
+        scaffoldBackgroundColor: Colors.white,
       ),
-      home: Dashboard(), // Menampilkan Dashboard sebagai halaman utama
+      home: const NotifikasiScreen(),
     );
   }
 }

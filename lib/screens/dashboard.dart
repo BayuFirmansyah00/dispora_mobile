@@ -1,4 +1,4 @@
-import 'package:dispora/screen/carisektor.dart';
+import 'package:dispora/screens/carisektor.dart';
 import 'package:flutter/material.dart';
 import 'notifikasi.dart'; // Existing import
 import 'carisektor.dart'; // New import for CariSektor
