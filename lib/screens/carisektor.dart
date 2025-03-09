@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:dispora/screen/subsektor.dart';
+import 'package:dispora/screens/subsektor.dart';
 import 'notifikasi.dart';
 
 class CariSektorScreen extends StatelessWidget {
