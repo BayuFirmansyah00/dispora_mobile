@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../../models/Event.dart';
+import '../../models/Article.dart';
 
-class InformasiEventScreen extends StatelessWidget {
-  final Event data;
+class InformasiArticleScreen extends StatelessWidget {
+  final Article data;
 
-  const InformasiEventScreen({
+  const InformasiArticleScreen({
     Key? key,
     required this.data,
   }) : super(key: key);
@@ -30,7 +30,7 @@ class InformasiEventScreen extends StatelessWidget {
   }
 
   // Formatter untuk updatedAt
-  String? _formatUpdatedAt(Event data) {
+  String? _formatUpdatedAt(Article data) {
     if (data.updatedAt == null) {
       print('updatedAt is null'); // Debug log
       return null;
@@ -46,18 +46,16 @@ class InformasiEventScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Debug log untuk memeriksa data
-    print('InformasiEventScreen data:');
+    print('InformasiArticleScreen data:');
     print('title: ${data.title}');
     print('thumbnail: ${data.thumbnail}');
-    print('description: ${data.description}');
-    print('location: ${data.location}');
-    print('note: ${data.note}');
+    print('content: ${data.content}');
     print('createdAt: ${data.createdAt}');
     print('formattedCreatedAt: ${data.formattedCreatedAt}');
     print('updatedAt: ${data.updatedAt}');
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Detail Event')),
+      appBar: AppBar(title: const Text('Detail Artikel')),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -97,26 +95,11 @@ class InformasiEventScreen extends StatelessWidget {
               style: TextStyle(color: Colors.grey[600]),
             ),
             const SizedBox(height: 16),
-            // Tampilkan deskripsi
-            if (data.description != null && data.description!.isNotEmpty)
-              Text(
-                'Tentang acara ini: ${data.description}',
-                style: const TextStyle(fontSize: 16),
-              ),
-            const SizedBox(height: 16),
-            // Tampilkan lokasi
-            if (data.location != null && data.location!.isNotEmpty)
-              Text(
-                'Berlangsung di: ${data.location}',
-                style: const TextStyle(fontSize: 16),
-              ),
-            const SizedBox(height: 16),
-            // Tampilkan note
-            if (data.note != null && data.note!.isNotEmpty)
-              Text(
-                'Catatan: ${data.note}',
-                style: const TextStyle(fontSize: 16),
-              ),
+            // Tampilkan content
+            Text(
+              'Isi artikel: ${data.content?.isNotEmpty == true ? data.content : 'Belum ada konten'}',
+              style: const TextStyle(fontSize: 16),
+            ),
           ],
         ),
       ),
